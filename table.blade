@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover tablesorter">
+      <thead>
+        <tr>
+          <th>Tên <i class="fa fa-sort"></i></th>
+          <th>Email <i class="fa fa-sort"></i></th>
+          <th>Địa Chỉ </th>
+          <th>Số Điện Thoại</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($users as $user)
+        <tr>
+          <td>{{ $user->name }}</td>
+          <td>{{ $user->email }}</td> 
+          <td>{{ $user->address }}</td>
+          <td>{{ $user->phone }}</td>
+          <td>
+            <button class="btn btn-warning" style="float: left"><a href="{{ route('user.edit',['id'=>$user->id])}}"><i class="fa fa-edit"></i></a></button>
+            <button class="btn btn-danger"><a class="delete-user" user-id="{{ $user->id }}" onclick="return confirm('Xác nhận xóa?')" href="#"><i class="fa fa-trash"></i></a></button>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>

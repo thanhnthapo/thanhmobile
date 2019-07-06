@@ -33,31 +33,6 @@
       var page = $(this).attr('page');
       listUser(page);
     })
-
-    $("delete-user").on('click',function(){
-      var userId = $(this).attr("user-id");
-      var token = $("meta[name='csrf-token']").attr("content");
-      console.log(userId);
-      $(this).parent().parent().parent().remove();
-
-      $.ajax({
-        url:'/admin/user/delete',
-        type: 'POST',
-        data: {"id": userId, "token": token},
-        success: function(res){
-          console.log(res);
-        },
-        error: function(err){
-
-        }
-      })
-    })
-
-    // $(document).on('click', '.pageContent', function(){
-    //   var page = $(this).attr('page');
-    //   alert(page);
-    // })
-
     function listUser(page = 1){
       $.ajax({
         url:'/admin/user/list/ajax?page=' + page,
@@ -93,6 +68,22 @@
       }
     })
     }
+
+    $("delete-user").on('click',function(){
+      var userId = $(this).attr("user-id");
+      var token = $("meta[name='csrf-token']").attr("content");
+      console.log(userId);
+      $(this).parent().parent().parent().remove();
+      $.ajax({
+        url:'/admin/user/delete',
+        type: 'POST',
+        data: {"id": userId, "token": token},
+        success: function(res){
+        },
+        error: function(err){
+        }
+      })
+    })
   })
 </script>
 @endsection 

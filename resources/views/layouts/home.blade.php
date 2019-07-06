@@ -10,7 +10,7 @@
   <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
  {{--  <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('fontawesome/js/all.css') }}" rel="stylesheet" type="text/css" />
- --}}  <link href="{{ asset('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700') }}" rel="stylesheet">
+ --}}  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700'" rel="stylesheet">
   <link href="{{ asset('css/stylesheet.css') }}" rel="stylesheet">
   <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
   <link href="{{ asset('owl-carousel/owl.carousel.css') }}" type="text/css" rel="stylesheet" media="screen" />
@@ -38,7 +38,7 @@
       @include('layouts.partions.footer')
     {{-- </div> --}}
   </footer>
-    <script src="javascript/parally.js"></script> 
+    <script src="{{ asset('javascript/parally.js') }}"></script> 
     <script>
       $('.parallax').parally({offset: -40});
     </script>

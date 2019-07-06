@@ -14,13 +14,15 @@
           <div class="thumbnails">
             <div><a class="thumbnail" href="#" title="{{$product->name}}"><img src="{{ asset('uploads/'.$product->img) }}" alt="{{$product->product_code}}" /></a></div>
             <div id="product-thumbnail" class="owl-carousel">
+              @foreach($details_img as $detail)
               <div class="item">
                 <div class="image-additional">
-                  <a class="thumbnail  " href="{{ asset('uploads/'.$product->img) }}" title="lorem ippsum dolor dummy"> 
-                    <img src="{{ asset('uploads/'.$product->img) }}" width="220px" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" />
+                  <a class="thumbnail  " href="#" title="lorem ippsum dolor dummy"> 
+                    <img src="{{ asset('uploads/details/'.$detail->img) }}" height="200px" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" />
                   </a>
                 </div>
               </div>
+              @endforeach
             </div>
           </div>
         </div>
@@ -120,7 +122,7 @@
                 @foreach($sp_lienquan as $lq)
                 <div class="item">
                   <div class="product-thumb transition">
-                    <div class="image product-imageblock"> <a href="#"> <img src="{{ asset('uploads/'.$lq->img) }}" alt="women's New Wine is an alcoholic" title="women's New Wine is an alcoholic" class="img-responsive" /> </a>
+                    <div class="image product-imageblock"> <a href="{{ url('product/show',['id'=>$lq->id]) }}"> <img src="{{ asset('uploads/'.$lq->img) }}" alt="women's New Wine is an alcoholic" title="women's New Wine is an alcoholic" class="img-responsive" /> </a>
                       <div class="button-group">
                         <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List"><i class="fa fa-heart-o"></i></button>
                         <button type="button" class="addtocart-btn">Add to Cart</button>

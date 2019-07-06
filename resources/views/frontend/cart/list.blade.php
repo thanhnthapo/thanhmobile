@@ -53,8 +53,11 @@
           <table class="table table-bordered">
             <tbody>
               <tr>
-                <td class="text-right"><strong>Tổng Tiền:</strong></td>
-                <td class="text-right"></td>
+                @foreach($carts as $cart)
+ 
+                <td class="text-right"><strong>Tổng Tiền: </strong></td>
+
+                @endforeach
               </tr>
             </tbody>
           </table>
@@ -62,7 +65,7 @@
       </div>
       <div class="buttons">
         <div class="pull-left"><a class="btn btn-default" href="{{ route('frontend.home.index') }}">Tiếp tục mua sắm</a></div>
-        <div class="pull-right"><a class="btn btn-primary" href="checkout.html">Thanh Toán</a></div>
+        <div class="pull-right"><a class="btn btn-primary" href="{{ route('checkout.show') }}">Thanh Toán</a></div>
       </div>
     </div>
   </div>

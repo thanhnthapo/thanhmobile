@@ -6167,3 +6167,38 @@ button.close {
 	  border-bottom: 7px solid #39AAB0 !important;
 	
 }
+.beta-form-checkout select {
+line-height:37px;
+height:37px
+}
+
+.beta-form-checkout input {
+margin-bottom:5px
+}
+
+.form-block {
+margin-bottom:20px;
+overflow:hidden
+}
+
+.form-block>* {
+float:left
+}
+
+.form-block label {
+width:200px;
+font-weight:lighter
+}
+
+.form-block input,.form-block select,.beta-form-checkout textarea {
+width:60%;
+overflow:hidden
+}
+
+.form-block #apartment {
+margin-left:200px
+}
+
+.beta-form-checkout textarea {
+height:140px
+}

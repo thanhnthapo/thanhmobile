@@ -20,25 +20,29 @@
   {{-- <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css"> --}}
 </head>
 <body>
-  <div class="row">
-    <div class="col-sm-6">
-      <div class="well">
-        <h2>Đăng Nhập</h2>
-        <form enctype="multipart/form-data" method="post" action="{{ route('login') }}">
-          @csrf
-          <div class="form-group">
-            <label for="input-email" class="control-label">E-Mail</label>
-            <input type="text" class="form-control" id="email" placeholder="E-Mail Address" value="" name="email">
-          </div>
-          <div class="form-group">
-            <label for="input-password" class="control-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="password" value="" name="password">
-          </div>
-          <div class="form-group">
-            <span>Quên mật khẩu: <a href="#">tại đây</a></span></br>
-          </div>
-          <input type="submit" class="btn btn-primary" value="login">
-        </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10">
+        <div class="well">
+          <h2>Đăng Nhập</h2>
+          <form enctype="multipart/form-data" method="post" action="{{ route('login') }}">
+            @csrf
+            <div class="form-group">
+              <label for="input-email" class="control-label">E-Mail</label>
+              <input type="text" class="form-control" id="email" placeholder="E-Mail Address..." value="" name="email">
+              <p style="color: red">{{ $errors->first('email')}}</p>
+            </div>
+            <div class="form-group">
+              <label for="input-password" class="control-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Password..." value="" name="password">
+              <p style="color: red">{{ $errors->first('password')}}</p>
+            </div>
+            <div class="form-group">
+              <span>Quên mật khẩu: <a href="#">tại đây</a></span></br>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Login">
+          </form>
+        </div>
       </div>
     </div>
   </div>

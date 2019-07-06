@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\User\CreateUserRequest;
 use App\Http\Requests\Backend\User\UpdateUserRequest;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -40,7 +41,13 @@ class UserController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
-        User::Create($request->all());
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->address = $request->address;
+        $user->phone = $request->phone;
+        $user->password = Hash::make($request->password);
+        $user->save();
         return redirect(route('user.index'));
     }
 

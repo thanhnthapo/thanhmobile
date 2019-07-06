@@ -82,7 +82,7 @@
   <a id="scrollup">Scroll</a> </footer>
 <div class="footer-bottom">
   <div class="container">
-    <div class="copyright">Powered By &nbsp;<a class="yourstore" href="http://www.lionode.com/">lionode &copy; 2017 </a> </div>
+    <div class="copyright">Powered By &nbsp;<a class="yourstore" href="#">lionode &copy; 2017 </a> </div>
     <div class="footer-bottom-cms">
       <div class="footer-payment">
         <ul>

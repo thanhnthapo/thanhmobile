@@ -30,6 +30,7 @@
     @include('backend.partions.left')
     
     @yield('content')
+   
     <!-- /#page-wrapper -->
 
   </div><!-- /#wrapper -->
@@ -40,18 +41,20 @@
 
   <!-- Page Specific Plugins -->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="{{ asset('vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
   {{-- <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script> --}}
   <script src="{{ asset('backend/js/morris/chart-data-morris.js') }}"></script>
   <script src="{{ asset('backend/js/tablesorter/jquery.tablesorter.js') }}"></script>
   <script src="{{ asset('backend/js/tablesorter/tables.js') }}"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <script type="text/javascript">
     $.ajaxSetup({
       headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
       }
     });
+    CKEDITOR.replace( 'decription' );
   </script>
   @yield('js')
 

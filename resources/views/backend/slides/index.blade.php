@@ -1,7 +1,7 @@
 @extends('layouts.backend')
 
 @section('content')
-<div class="col-lg-12">
+<div class="col-lg-10">
   <h3>Quản Lý Banner</h3>
   <div class="table-responsive">
     <button class="btn btn-success" style="margin: 10px 0px"><a href="{{ route('slide.create') }}" ><i class="fa fa-plus"></i> Thêm mới</a></button>
@@ -17,7 +17,7 @@
         @foreach($slides as $slide)
         <tr>
           <td>{{ $slide->link }}</td>
-          <td style="text-align: center;"><img src="{{ asset('uploads/'.$slide->img)}}" alt="" width="350px"></td>
+          <td style="text-align: center;"><img src="{{ asset('uploads/slide/'.$slide->img)}}" alt="" width="250px"></td>
           <td><button class="btn btn-warning" style="float: left;"><a href="{{ route('slide.edit',['id'=>$slide->id]) }}"><i class="fa fa-edit"></i></a></button>  
               <div class="form_delete">
               {!! Form::open([

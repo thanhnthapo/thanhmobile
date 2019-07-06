@@ -39,6 +39,8 @@ Route::group(['namespace' => 'frontend'],function(){
 	Route::get('cart/add/{productId}', 'CartController@insert')->name('cart.add');
 	Route::get('cart/delete/{productId}', 'CartController@delete')->name('cart.delete');
 	Route::post('cart/update', 'CartController@update');
+	Route::get('checkout/show','CheckoutController@show')->name('checkout.show');
+	Route::post('checkout/show','CheckoutController@insert')->name('checkout.show');
 });
 
 Route::group(['namespace' => 'backend', 'prefix' => 'admin' , 'middleware' => 'auth'], function(){
@@ -58,4 +60,5 @@ Route::group(['namespace' => 'backend', 'prefix' => 'admin' , 'middleware' => 'a
 });
 Route::get('login','backend\LogInController@getLogin')->name('login');
 Route::post('login','backend\LogInController@postLogin');
+Route::get('logout','backend\LogInController@postLogout')->name('logout');
 

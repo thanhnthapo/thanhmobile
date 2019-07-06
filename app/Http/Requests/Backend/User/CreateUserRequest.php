@@ -45,7 +45,7 @@ class CreateUserRequest extends FormRequest
             'phone.required' => 'Không được bỏ trống',
             'phone.unique' => 'Số điện thoại đã tồn tại',
             'password.required' => 'Không được bỏ trống',
-            'password.min' => 'Mật khẩu chứ ít nhất 6 ký tự'
+            'password.min' => 'Mật khẩu chứa ít nhất 6 ký tự'
         ];
     }
 }

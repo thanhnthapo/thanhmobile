@@ -24,11 +24,6 @@
       <div class="item text-center"> <a href="#"><img src="image/brand/brand9.png" alt="Canon" class="img-responsive" /></a> </div>
       <div class="item text-center"> <a href="#"><img src="image/brand/brand5.png" alt="Canon" class="img-responsive" /></a> </div>
     </div>
-    <div class="cms_banner ">
-      <div class="col-md-4 cms-banner-left"> <a href="#"><img alt="#" src="image/banners/subbanner1.jpg"></a> </div>
-      <div class="col-md-4 cms-banner-middle"><a href="#"> <img alt="#" src="image/banners/subbanner2.jpg"></a></div>
-      <div class="col-md-4 cms-banner-right"> <a href="#"><img alt="#" src="image/banners/subbanner3.jpg"></a> </div>
-    </div>
   </div>
   <div class="row">
     <div id="content" class="col-sm-12">
@@ -80,7 +75,7 @@
                   <div class="image product-imageblock"> <a href="{{url('product/show', ['id' => $special_product->id ]) }}"> <img src="{{ asset('uploads/'. $special_product->img) }}" alt="{{ $special_product->name }}" title="{{ $special_product->name }}" class="img-responsive" /> </a>
                     <div class="button-group">
                       <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                      <button type="button" class="addtocart-btn" ><a href="{{ route('cart.add',['id'=>$new_product->id] )}}"></a>Add To Cart</button>
+                      <button type="button" class="addtocart-btn" ><a href="{{ route('cart.add',['id'=>$special_product->id] )}}">Add To Cart</a></button>
                       <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
                     </div>
                   </div>
@@ -103,7 +98,7 @@
         <div id="tab-bestseller" class="tab-content">
           <div class="box">
             <div id="bestseller-slidertab" class="row owl-carousel product-slider">
-              @foreach($products as $product)
+              @foreach($sale_products as $product)
               @if($product->sale_price != 0)
               <div class="item">
                 <div class="product-thumb transition">

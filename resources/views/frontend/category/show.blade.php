@@ -25,66 +25,28 @@
       </div>
       <h3 class="productblock-title">Specials</h3>
       <div class="row special-grid product-grid">
+        @foreach($special_products as $special_product)
         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
           <div class="product-thumb transition">
-            <div class="image product-imageblock"> <a href="#"><img src="image/product/5product50x59.jpg" alt="women's New Wine is an alcoholic" title="women's New Wine is an alcoholic" class="img-responsive" /></a>
+            <div class="image product-imageblock"> <a href="{{url('product/show', ['id' => $special_product->id ]) }}"><img src="{{ asset('uploads/'. $special_product->img) }}" alt="women's New Wine is an alcoholic" title="women's New Wine is an alcoholic" class="img-responsive" /></a>
               <div class="button-group">
                 <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn" >Add to Cart</button>
+                <button type="button" class="addtocart-btn" ><a href="{{ route('cart.add',['id'=>$special_product->id] )}}">Add to Cart</a></button>
                 <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
               </div>
             </div>
             <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="women's New Wine is an alcoholic">New Wine is an alcoholic</a> </h4>
-              <p class="price product-price"> <span class="price-new">$254.00</span><span class="price-tax">Ex Tax: $210.00</span> </p>
+              <h4 class="product-name"> <a href="product.html" title="women's New Wine is an alcoholic">{{ $special_product->name }}</a> </h4>
+              <p class="price product-price"> <span class="price-new">{{  number_format($special_product->price) }} VNĐ</span><span class="price-tax">Ex Tax: $210.00</span> </p>
             </div>
             <div class="button-group">
               <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn" >Add to Cart</button>
+              <button type="button" class="addtocart-btn"><a href="{{ route('cart.add',['id'=>$special_product->id] )}}">Add to Cart</a></button>
               <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-          <div class="product-thumb transition">
-            <div class="image product-imageblock"> <a href="#"><img src="image/product/1product50x59.jpg" alt="women's New Wine is an alcoholic" title="women's New Wine is an alcoholic" class="img-responsive" /></a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="women's New Wine is an alcoholic">New Wine is an alcoholic</a> </h4>
-              <p class="price product-price"> <span class="price-new">$254.00</span><span class="price-tax">Ex Tax: $210.00</span> </p>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn" >Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-grid-item">
-          <div class="product-thumb transition">
-            <div class="image product-imageblock"> <a href="#"><img src="image/product/4product50x59.jpg" alt="women's New Wine is an alcoholic" title="women's New Wine is an alcoholic" class="img-responsive" /></a>
-              <div class="button-group">
-                <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" class="addtocart-btn" >Add to Cart</button>
-                <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-              </div>
-            </div>
-            <div class="caption product-detail">
-              <h4 class="product-name"> <a href="product.html" title="women's New Wine is an alcoholic">New Wine is an alcoholic</a> </h4>
-              <p class="price product-price"> <span class="price-new">$254.00</span><span class="price-tax">Ex Tax: $210.00</span> </p>
-            </div>
-            <div class="button-group">
-              <button type="button" class="wishlist" data-toggle="tooltip" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-              <button type="button" class="addtocart-btn" >Add to Cart</button>
-              <button type="button" class="compare" data-toggle="tooltip" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
     <div id="content" class="col-sm-9">
